@@ -1,23 +1,20 @@
 package gaur.himanshu.tddgettingstarted.unit
 
 import gaur.himanshu.tddgettingstarted.Engine
+import org.junit.Assert
 import org.junit.Test
 
 class EngineShould {
 
-    private val engine:Engine= Engine(isTurnOn = false, temprature = 273.0)
+    private val engine:Engine = Engine(isTurnOn = false, temprature = 273)
 
     @Test
     fun turnOnIncreaseTemprature(){
         engine.turnOn()
 
-        assert(true){
-            engine.isTurnOn
-        }
+        Assert.assertEquals(true,engine.isTurnOn)
 
-        assert(true){
-            engine.temprature == 274.0
-        }
+        Assert.assertEquals(274,engine.temprature)
 
     }
 

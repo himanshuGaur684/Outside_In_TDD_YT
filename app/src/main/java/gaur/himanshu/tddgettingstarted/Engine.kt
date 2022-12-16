@@ -1,12 +1,9 @@
 package gaur.himanshu.tddgettingstarted
 
-class Engine(var isTurnOn:Boolean,var temprature:Double) {
+class Engine(var isTurnOn: Boolean, var temprature: Int) {
     fun turnOn() {
-
         isTurnOn = true
-        temprature -1
-
+        temprature++
     }
-
 
 }

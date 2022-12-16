@@ -2,36 +2,30 @@ package gaur.himanshu.tddgettingstarted.acceptance
 
 import gaur.himanshu.tddgettingstarted.Car
 import gaur.himanshu.tddgettingstarted.Engine
+import org.junit.Assert
 import org.junit.Test
 
 class CarFeature {
 
-    private val engine:Engine = Engine(isTurnOn = false, temprature = 273.0)
-    private val car: Car = Car(fuel = 5.0,engine)
+    private val engine:Engine = Engine(isTurnOn = false, temprature = 273)
+    private val car: Car = Car(fuel = 10,engine)
 
     @Test
-    fun carTurnOnAndReduceFuel() {
-
+    fun carTurnOnLooseFuel(){
         car.turnOn()
 
-        assert(true) {
-            car.fuel == 4.0
-        }
-
+        Assert.assertEquals(9,car.fuel)
     }
+
 
     @Test
-    fun carTurnOnIncreaseEngineTemprature() {
+    fun carTurnOnIncreasesEngineTemprature(){
         car.turnOn()
-        assert(true) {
-            car.engine.isTurnOn
-        }
-        assert(true) {
-            car.engine.temprature == 10.0
-        }
 
+        Assert.assertEquals(true,car.engine.isTurnOn)
+
+        Assert.assertEquals(274,car.engine.temprature)
     }
+
 
 }
-
-
